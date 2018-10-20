@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Order>
+    <orderDetails>
+      <OrderDetails>
+        <goodName>1</goodName>
+        <goodPrice>1</goodPrice>
+        <goodNum>1</goodNum>
+      </OrderDetails>
+    </orderDetails>
+    <orderNum>1</orderNum>
+    <orderName>1</orderName>
+    <orderClient>1</orderClient>
+    <tot>1</tot>
+  </Order>
+</ArrayOfOrder>

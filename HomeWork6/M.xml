@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Order>
+    <orderDetails>
+      <OrderDetails>
+        <goodName>薯片</goodName>
+        <goodPrice>4</goodPrice>
+        <goodNum>1</goodNum>
+      </OrderDetails>
+    </orderDetails>
+    <orderNum>201702</orderNum>
+    <orderName>食品</orderName>
+    <orderClient>张三</orderClient>
+    <tot>4</tot>
+  </Order>
+</ArrayOfOrder>
