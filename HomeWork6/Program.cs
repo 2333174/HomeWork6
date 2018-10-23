@@ -29,6 +29,7 @@ namespace HomeWork6
         public void addOrderDatails(OrderDetails b)
         {
             orderDetails.Add(b);
+            tot += int.Parse(b.goodNum) * int.Parse(b.goodPrice);
         }
     }
     public class OrderDetails
@@ -54,16 +55,18 @@ namespace HomeWork6
             count++;
         }
 
-        public void deleteOrder(int i)
+        public bool deleteOrder(int i)
         {
             try
             {
                 orderList.Remove(orderList[i]);
                 count--;
+                return true;
             }
             catch (ArgumentOutOfRangeException)
             {
                 Console.WriteLine("该订单不存在");
+                return false;
             }
 
         }
@@ -128,75 +131,79 @@ namespace HomeWork6
             }
         }
         //通过Linq查询订单 flag为0按订单号查找，flag为1按订单客人名称，flag为2查询总价超过10000的订单
-        public void searchOrderbyLinq(string s, int flag)
+        public Order searchOrderbyLinq(string s, int flag)
         {
             switch (flag)
             {
                 case 0:
-                    int t = 0;
+                    
                     var result = orderList.Where(a => a.orderNum == s);
                     foreach (var b in result)
                     {
-                        t = 1;
-                        Console.Write("找到的订单为：");
+                        
+                        return b;
+                        //测试时注释掉
+                        /*Console.Write("找到的订单为：");
                         Console.WriteLine(b.orderNum + "  " + b.orderName + "  " + b.orderClient + "  总价：" + b.tot);
                         Console.WriteLine("明细: ");
                         foreach (OrderDetails d in b.orderDetails)
                         {
                             Console.WriteLine(d.goodName + " " + d.goodPrice + " " + d.goodNum);
-                        }
+                        }*/
                     }
-                    if (t == 0)
-                    {
-                        Console.WriteLine("无此订单");
-                        break;
-                    }
-                    break;
+                    
+                        return null;
+                        /*Console.WriteLine("无此订单");
+                        break;*/
+                    
+                    
                 case 1:
-                    int t1 = 0;
+                    
                     var result1 = orderList.Where(a => a.orderClient == s);
                     foreach (var b in result1)
                     {
-                        t1 = 1;
-                        Console.Write("找到的订单为：");
+                        
+                        return b;
+                        /*Console.Write("找到的订单为：");
                         Console.WriteLine(b.orderNum + "  " + b.orderName + "  " + b.orderClient + "  总价：" + b.tot);
                         Console.WriteLine("明细: ");
                         foreach (OrderDetails d in b.orderDetails)
                         {
                             Console.WriteLine(d.goodName + " " + d.goodPrice + " " + d.goodNum);
-                        }
+                        }*/
                     }
-                    if (t1 == 0)
-                    {
-                        Console.WriteLine("无此订单");
-                        break;
-                    }
-                    break;
+                    
+                        return null;
+                        //Console.WriteLine("无此订单");
+                        //break;
+                    
+                   
                 default:
-                    int t2 = 0;
+                    
                     var result2 = orderList.Where(a => a.tot > 10000);
                     foreach (var b in result2)
                     {
-                        t2 = 1;
-                        Console.Write("找到的订单为：");
+                       
+                        return b;
+                        /*Console.Write("找到的订单为：");
                         Console.WriteLine(b.orderNum + "  " + b.orderName + "  " + b.orderClient + "  总价：" + b.tot);
                         Console.WriteLine("明细: ");
                         foreach (OrderDetails d in b.orderDetails)
                         {
                             Console.WriteLine(d.goodName + " " + d.goodPrice + " " + d.goodNum);
-                        }
+                        }*/
                     }
-                    if (t2 == 0)
-                    {
-                        Console.WriteLine("无此订单");
-                        break;
-                    }
-                    break;
+                    
+                        return null;
+                        /*Console.WriteLine("无此订单");
+                        break;*/
+                   
+                   
             }
 
         }
         //更改List第num个成员；flag为0，更改订单号，flag为1，更改订单商品名称，flag为2，更改订单客户名称
-        public void changeOrder(int num, string s, int flag)
+        public bool changeOrder(int num, string s, int flag)
         {
             try
             {
@@ -212,10 +219,12 @@ namespace HomeWork6
                         orderList[num].orderClient = s;
                         break;
                 }
+                return true;
             }
             catch (ArgumentOutOfRangeException)
             {
                 Console.WriteLine("需要修改的订单不存在");
+                return false;
             }
         }
     }
@@ -325,7 +334,6 @@ namespace HomeWork6
                             }
                             OrderDetails a1 = new OrderDetails(s4, s5, s6);
                             b1.addOrderDatails(a1);
-                            b1.tot += int.Parse(s5) * int.Parse(s6);
                         }
                         c.addOrder(b1);
                         break;

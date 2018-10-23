@@ -1,7 +1,0 @@
-D:\ComputerWork\C#\HomeWork6\TestCode\bin\Debug\TestCode.exe.config
-D:\ComputerWork\C#\HomeWork6\TestCode\bin\Debug\TestCode.exe
-D:\ComputerWork\C#\HomeWork6\TestCode\bin\Debug\TestCode.pdb
-D:\ComputerWork\C#\HomeWork6\TestCode\obj\Debug\TestCode.csprojAssemblyReference.cache
-D:\ComputerWork\C#\HomeWork6\TestCode\obj\Debug\TestCode.csproj.CoreCompileInputs.cache
-D:\ComputerWork\C#\HomeWork6\TestCode\obj\Debug\TestCode.exe
-D:\ComputerWork\C#\HomeWork6\TestCode\obj\Debug\TestCode.pdb
